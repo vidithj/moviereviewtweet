@@ -93,6 +93,11 @@ func Test_createStars(t *testing.T) {
 		expected string
 	}{
 		{
+			name:     "Success Path ",
+			input:    0,
+			expected: "",
+		},
+		{
 			name:     "success Path 100",
 			input:    100,
 			expected: "★★★★★",

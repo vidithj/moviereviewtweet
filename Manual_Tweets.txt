@@ -1,0 +1,22 @@
+Movie Tweets : 
+
+1. Run the application : go run main.go reviews.json movies.json
+2. Run test cases :
+                     with additional information : go test -v 99designs-coding-test/api 
+                     without additional information : go test 99designs-coding-test/api
+3. Folder Structure : 
+                        api : Contains api.go which has all the logic for building the tweets
+                        assets: contains source files for building tweets - movie.json and reviews.json
+                        model : contains the definition of structs required during tweet building
+
+4. Overall : This application takes two command line argument one reviews.json and other movies.json that contains review information for the movies.All the logic to create the tweets are present
+in api/api.go . When each tweet is created , the length of the tweet is checked. If the length is greater than 140 then first we reduce the length of title to 25. if the length of tweet is stil
+greater than 140 , we reduce the length of review so that the total length of tweet is not more than 140. After the tweets are created, the tweets are printed on the console.
+
+5. Application Stages : 
+- Read command line arguments to get movies.json and reviews.json.
+- Read files movies.json and reviews.json and store in local memory.
+- Create tweet for each review. Calculate stars based on score and append each information to create tweet.
+- Check if each tweet length is not more than 140 . If length is greater than 140 , reduce title to length 25. If tweet length is still greater than 140 then reduce the length of review.
+- Return array of tweets created. Format and print the tweets.
+- Test cases for each logic for creating tweets.
