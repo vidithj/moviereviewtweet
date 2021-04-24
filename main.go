@@ -14,11 +14,11 @@ const (
 func main() {
 	//read command line arg to get movie and review json
 	arg := os.Args
-	movies, err := api.ReadMoviesInfo(assetspath + arg[1])
+	reviews, err := api.ReadReviews(assetspath + arg[1])
 	if err != nil {
 		fmt.Println("Error while fetching movies : ", err)
 	}
-	reviews, err := api.ReadReviews(assetspath + arg[2])
+	movies, err := api.ReadMoviesInfo(assetspath + arg[2])
 	if err != nil {
 		fmt.Println("Error while fetching reviews : ", err)
 	}
