@@ -4,6 +4,7 @@ import (
 	"99designs-coding-test/api"
 	"fmt"
 	"os"
+	"strings"
 )
 
 const (
@@ -11,7 +12,7 @@ const (
 )
 
 func main() {
-	//read command line arg
+	//read command line arg to get movie and review json
 	arg := os.Args
 	movies, err := api.ReadMoviesInfo(assetspath + arg[1])
 	if err != nil {
@@ -21,5 +22,10 @@ func main() {
 	if err != nil {
 		fmt.Println("Error while fetching reviews : ", err)
 	}
-	api.MovieReview(movies, reviews)
+	//create tweets
+	tweets := api.MovieReview(movies, reviews)
+	//format and print tweets
+	fmt.Println("Tweets:")
+	fmt.Println("-------")
+	fmt.Println(strings.Join(tweets, "\n"))
 }

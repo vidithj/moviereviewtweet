@@ -10,5 +10,13 @@ type Movie struct {
 type Review struct {
 	Title  string `json:"title"`
 	Review string `json:"review"`
-	Score  string `json:"score"`
+	Score  int    `json:"score"`
+}
+
+//Tweet struct for holding information for creating tweet
+type Tweet struct {
+	Title  string
+	Review string
+	Score  int
+	Year   int
 }
